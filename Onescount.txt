@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Onescount {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the starting Range : ");
+		int startRange = sc.nextInt();
+		System.out.println("Enter the ending Range : ");
+		int endRange = sc.nextInt();
+		int itr=1,count=0;
+		while(itr<=endRange)
+		{
+			int num = itr;
+			while(num!=0) {
+				if(num%10==1) {
+					count++;
+				}
+				num/=10;
+			}
+			itr++;
+		}
+		System.out.println("The number of ones present from "+startRange+" to "+endRange+" is "+count+" one's.");
+		
+
+	}
+
+}

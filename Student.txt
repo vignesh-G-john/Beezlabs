@@ -1,0 +1,81 @@
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+class Student
+{
+	public int m1,m2,m3,m4,m5;
+	Student(int m1,int m2,int m3,int m4,int m5)
+	{
+		this.m1=m1;
+		this.m2=m2;
+		this.m3=m3;
+		this.m4=m4;
+		this.m5=m5;
+	}
+}
+public class Student_Average {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of students :");
+		int num = sc.nextInt();
+		List<List<Integer>> al = new ArrayList<>();
+		int flag=0;
+		for(int i=0;i<num;i++)
+		{
+			List<Integer> l = new ArrayList<>();
+			for(int j=0;j<2;j++) {
+			if(flag==0) {
+			System.out.println("Enter the "+i+1+"st student Quartely marks:");
+			flag=1;
+			}
+			else {
+				System.out.println("Enter the "+i+1+"st student Half yearly marks:");
+				flag=0;
+			}
+			System.out.print("English -");
+			int eng = sc.nextInt();
+			System.out.println();
+			System.out.println("Tamil -");
+			int tam = sc.nextInt();
+			System.out.println();
+			System.out.println("Maths -");
+			int mat = sc.nextInt();
+			System.out.println();
+			System.out.println("Science -");
+			int sci = sc.nextInt();
+			System.out.println();
+			System.out.println("Social Science -");
+			int s_sci =sc.nextInt();
+			System.out.println();
+			Student s1,s2;
+			if(flag==1) {
+				s1=new Student(eng,tam,mat,sci,s_sci);
+			}else {
+				s2=new Student(eng,tam,mat,sci,s_sci);
+			}
+			}
+			l.add((s1.m1+s2.m1)/2);
+			l.add((s1.m2+s2.m2)/2);
+			l.add((s1.m3+s2.m3)/2);
+			l.add((s1.m4+s2.m4)/2);
+			l.add((s1.m5+s2.m5)/2);
+			al.add(l);
+			
+		}
+		for(int i=0;i<al.size();i++) {
+			System.out.println("Average of "+i+1+" student:");
+			for(int j=0;j<al.get(i).size();j++) {
+				System.out.println("English -"+al.get(i).get(j));
+				System.out.println("Tamil -"+al.get(i).get(j));
+				System.out.println("Maths -"+al.get(i).get(j));
+				System.out.println("Science -"+al.get(i).get(j));
+				System.out.println("Social Science -"+al.get(i).get(j));
+			}
+		}
+			
+		
+
+	}
+
+}

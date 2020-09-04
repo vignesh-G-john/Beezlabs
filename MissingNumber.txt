@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MissingNumber {
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		sc.nextLine();
+		int arr[] = new int[size];
+		for(int i=0;i<size;i++) {
+			arr[i]=sc.nextInt();
+		}
+		Arrays.sort(arr);
+		List<Integer> al = new ArrayList<>();
+		int start = arr[0];
+		for(int i=0;i<size;i++) {
+			if(arr[i]!=start) {
+				al.add(start);
+				i--;
+			}
+			start++;
+		}
+		System.out.print("The missing numbers from "+arr[0]+" to "+arr[size-1]+" is ");
+		al.forEach(i->System.out.print(i));
+		
+	}
+
+}

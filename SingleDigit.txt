@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Singledigit {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Digit :");
+		int num = sc.nextInt();
+		String str = String.valueOf(num);
+		while(str.length()>1) {
+			num = Integer.parseInt(str);
+			int sum =0 ;
+			while(num!=0) {
+				sum+=num%10;	
+				num/=10;
+			}
+			str = String.valueOf(sum);
+		}
+		System.out.print("single digit is"+str);
+
+	}
+
+}
